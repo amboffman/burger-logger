@@ -1,11 +1,7 @@
 const connection = require("./connection");
-let callback = (err, result) => {
-  if (err) { throw err; }
-  cb(result);
-}
 
 const orm = {
-  selectALL: (table, cb) => {
+  selectAll: (table, cb) => {
     const query = "SELECT * FROM ??"
     connection.query(query, [table], (err, result) => {
       if (err) { throw err; }
@@ -34,3 +30,5 @@ const orm = {
 
 
 };
+
+module.exports = orm;
