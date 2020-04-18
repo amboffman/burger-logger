@@ -1,10 +1,18 @@
 {
+  "development": {
+    "username": "sjgb4no2y2m11leu",
+    "password": "g4nij76t6ym2vnsf",
+    "database": "rpk99e3h1th9fz0a",
+    "host": "i2cpbxbi4neiupid.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
   "name": "burger-logger",
   "version": "1.0.0",
   "description": "A restaurant app that lets users input the names of burgers they'd like to eat.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +28,6 @@
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {}
 }
