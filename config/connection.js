@@ -13,6 +13,7 @@ connection.connect((err) => {
     console.error("error connecting: " + err.stack);
     return;
   }
+  console.log("connected")
 });
 
 module.exports = connection;
