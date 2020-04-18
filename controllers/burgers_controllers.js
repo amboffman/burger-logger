@@ -16,16 +16,17 @@ router.get("/", (req, res) => {
 
 
 router.post("/api/burgers", (req, res) => {
-  burger.create({ name: req.body.burger_name, devoured: req.body.devoured }, (result) => {
-    res.json({ id: result.insertId });
+  burger.insertOne({ name: req.body.burger_name, devoured: req.body.devoured }, (result) => {
+    res.json({ id: result.id })
+    ;
   });
 });
 
-router.put("/api/burgerss/:id/devoured", (req, res) => {
+router.put("/api/burgers/:id/devoured", (req, res) => {
   const condition = { id: req.params.id };
   const update = { devoured: req.body.value };
 
-  burger.update(update, condition, (result) => {
+  burger.updateOne(update, condition, (result) => {
     if (result.affectedRows === 0) {
       return res.status(404).end();
     }
